@@ -43,14 +43,6 @@ window.addEventListener("DOMContentLoaded", function () {
     showPerson();
 });
 
-function showPerson() {
-    const item = reviews[currentItem];
-    img.src = item.img;
-    author.textContent = item.name;
-    job.textContent = item.job;
-    info.textContent = item.text;
-}
-
 nextBtn.addEventListener("click", function () {
     currentItem++;
     if (currentItem > reviews.length - 1) {
@@ -70,4 +62,12 @@ prevBtn.addEventListener("click", function () {
 randomBtn.addEventListener("click", function () {
     currentItem = Math.floor(Math.random() * reviews.length);
     showPerson();
-})
+});
+
+function showPerson() {
+    const item = reviews[currentItem];
+    img.src = item.img;
+    author.textContent = item.name;
+    job.textContent = item.job;
+    info.textContent = item.text;
+}
